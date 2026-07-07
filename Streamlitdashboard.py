@@ -36,7 +36,7 @@ st.markdown("""
 
 # ─── DATA LOADING & CACHING ───────────────────────────────────────────────────
 @st.cache_data
-def load_data(path='C:/Users/Lenovo/Downloads/Atlantic_United_States (1).csv'):
+def load_data(path='C:/Users/Lenovo/Downloads/Atlantic_United_States.csv'):
     df = pd.read_csv(path)
     df['date'] = pd.to_datetime(df['date'], dayfirst=True, errors='coerce')
     df = df.dropna(subset=['date']).sort_values('date').reset_index(drop=True)
